@@ -1,0 +1,47 @@
+<!doctype html>
+                <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width,
+                    initial-scale=1, shrink-to-fit=no">
+                    <link rel="stylesheet"
+                    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                    crossorigin="anonymous">
+                            
+    <title>IT shop admin page</title>
+  </head>
+ <body>
+	<form method="post">
+	<div style = "margin-left:900px;"><p style="font-size: 50px">Здесь админ добавляет товары в магазин</p></div>	
+	<br>
+	<div class="col-md-2">
+			<h3>Введите наименование товара</h3>
+			<br>
+			<input type="text" class="form-control" id="name_in" placeholder="Введите название" name = "name">
+			<br>
+			<button type="submit" class="btn btn-primary">Добавить</button>
+	</div>
+	<table>
+		{% for product in pr %}
+		<tr>
+			<td>
+				<br>
+				<h2>{{product}}<h2>
+			</td>
+						
+			<td>
+				<a href="/del_prod/<{{product}}>">
+					<br>
+					<button type="button" style = "margin-left:30px" class="btn btn-outline-primary" name = "delete_one">
+						<p style="font-size: 15px">Удалить товар</p>
+					</button>
+				</a>
+			</td>
+			
+		</tr>
+		{% endfor %}
+		</table>
+</body>
+</html>
+	
